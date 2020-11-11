@@ -26,8 +26,8 @@ public class CursoServicio {
 		 
 		 
 		 try {
-			 	ResponseDTO cursolist = cursobd.listar();
-			 	model.put("cursolist", cursolist.getRespuesta());
+			 	ResponseDTO cursoList = cursobd.listar();
+			 	model.put("cursoList", cursoList.getRespuesta());
 			
 		} catch (Exception e) {
 			model.put("err", "error");

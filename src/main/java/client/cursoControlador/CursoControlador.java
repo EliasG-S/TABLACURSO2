@@ -27,22 +27,18 @@ public class CursoControlador {
 				public String list(Model  vista) {
 					Map<String , Object> modelo = new HashMap<>();
 					modelo=(servicioCurso.listar());
-					vista.addAttribute( "curso" , modelo.get("cursolist"));
-					return "curso";
-			
-		
+					vista.addAttribute( "cursos" , modelo.get("cursoList"));
+					return "Curso";	
 	}
-	
 	
 	@GetMapping("/crear")
 	public String redirect(Model model) {
-		model.addAttribute("crear curso", new CursoDTO());
-		return "Crar curso";
+		model.addAttribute("Crearcurso", new CursoDTO());
+		return "Curso";
 	}
 	
 	@PostMapping
 	public String crear(@ModelAttribute("crearCurso")CursoDTO curso) {
-		
 		servicioCurso.crear(curso);
 		return "redirect:/curso";
 		
@@ -52,9 +48,9 @@ public class CursoControlador {
 		servicioCurso.actualizar(curso);
 		return  "redirect:/curso";
 	}
-	@PostMapping("/deletr/{Id_Curso}")
+	@PostMapping("/delete/{Id_Curso}")
 	public String borrar(@PathVariable("Id_Curso") Long Id_Curso) {
-		servicioCurso.eliminar(Id_Curso);
+		servicioCurso.eliminar(Id_Curso); 
 		return  "redirect:/curso";
 	}
 	
