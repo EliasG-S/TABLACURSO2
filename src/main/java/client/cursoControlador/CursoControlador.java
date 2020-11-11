@@ -50,7 +50,7 @@ public class CursoControlador {
 	}
 	@PostMapping("/delete/{Id_Curso}")
 	public String borrar(@PathVariable("Id_Curso") Long Id_Curso) {
-		servicioCurso.eliminar(Id_Curso); 
+		servicioCurso.borrar(Id_Curso);
 		return  "redirect:/curso";
 	}
 	

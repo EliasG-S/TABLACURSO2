@@ -69,7 +69,7 @@ public class CursoServicio {
 		 return model;
 	}
 	
-	public Map<String, Object>eliminar(Long Id_Curso){
+	public Map<String, Object>borrar(Long Id_Curso){
 		
 		 Map<String,Object>model = new HashMap<>();
 		 
